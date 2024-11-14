@@ -11,6 +11,8 @@ app.config_from_object("django.conf:settings", namespace="CELERY")
 app.conf.update(
     broker_url=env.str("CELERY_BROKER_URL", default="redis://127.0.0.1:6379/0"),
 )
+# Retrieve Bookings will trigger at midnight
+# Change cron schedule to test
 app.conf.beat_schedule = {
     "run-retrieve-bookings": {
         "task": "apps.dashboard.tasks.retrieve_bookings",
