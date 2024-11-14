@@ -33,5 +33,5 @@ pre-commit install
 pre-commit run --all-files
 ```
 ## Using the app
-* Open your browser and go to http://localhost:8000/api/v1/schema/swagger/
+* Open your browser and go to http://localhost:9001/api/v1/schema/swagger/
 * Test existing endpoints

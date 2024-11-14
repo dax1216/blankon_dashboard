@@ -3,6 +3,8 @@ services:
     image: redis:latest
     ports:
       - "6379:6379"
+    networks:
+      - my_network
   django: &django
     build:
       context: .
@@ -16,6 +18,8 @@ services:
       - ./.env
     depends_on:
       - redis
+    networks:
+      - my_network
     command: /start
   celeryworker:
     <<: *django
@@ -23,6 +27,8 @@ services:
     ports: []
     depends_on:
       - redis
+    networks:
+      - my_network
     command: /start-celeryworker
   celerybeat:
     <<: *django
@@ -30,4 +36,10 @@ services:
     ports: []
     depends_on:
       - redis
+    networks:
+      - my_network
     command: /start-celerybeat
+
+networks:
+  my_network:
+    external: true
