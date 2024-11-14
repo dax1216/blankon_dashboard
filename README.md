@@ -35,3 +35,4 @@ pre-commit run --all-files
 ## Using the app
 * Open your browser and go to http://localhost:9001/api/v1/schema/swagger/
 * Test existing endpoints
+* Periodic tasks are scheduled to run at midnight every day.
