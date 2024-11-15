@@ -163,7 +163,7 @@ typings/
 .devcontainer/bash_history
 
 
-
+db.sqlite3
 
 ### Windows template
 # Windows thumbnail cache files
